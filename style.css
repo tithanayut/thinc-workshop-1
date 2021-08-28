@@ -71,6 +71,20 @@ header h1 {
     font-size: 50px;
 }
 
+nav {
+    display: flex;
+    justify-content: center;
+}
+select {
+    font-family: "Poppins";
+    font-weight: 600;
+    width: 300px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 20px;
+    outline: none;
+}
+
 .boxes {
     display: flex;
     justify-content: center;
