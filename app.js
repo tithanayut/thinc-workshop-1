@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
+    const nf = new Intl.NumberFormat();
+
     // DOM elements
     const cases_new = document.getElementById("cases-new");
     const cases_total = document.getElementById("cases-total");
@@ -14,12 +16,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const data = await res.json();
 
     // populate DOM
-    cases_new.innerText = data.todayCases;
-    cases_total.innerText = data.cases;
-    cases_active.innerText = data.active;
-    cases_critical.innerText = data.critical;
-    deaths_new.innerText = data.todayDeaths;
-    deaths_total.innerText = data.deaths;
-    recovered_new.innerText = data.todayRecovered;
-    recovered_total.innerText = data.recovered;
+    cases_new.innerText = "+" + nf.format(data.todayCases);
+    cases_total.innerText = nf.format(data.cases);
+    cases_active.innerText = nf.format(data.active);
+    cases_critical.innerText = nf.format(data.critical);
+    deaths_new.innerText = "+" + nf.format(data.todayDeaths);
+    deaths_total.innerText = nf.format(data.deaths);
+    recovered_new.innerText = "+" + nf.format(data.todayRecovered);
+    recovered_total.innerText = nf.format(data.recovered);
 });
