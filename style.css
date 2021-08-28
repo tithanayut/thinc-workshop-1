@@ -37,6 +37,7 @@ p.value-medium {
 p.value-large {
     font-size: 80px;
     font-weight: 600;
+    line-height: 1.4;
 }
 .text-gray {
     color: #575757;
@@ -102,12 +103,10 @@ header h1 {
 }
 .box-row-left {
     width: 50%;
-    padding-top: 10px;
     border-right: 1px solid #a8a8a8;
 }
 .box-row-right {
     width: 50%;
-    padding-top: 10px;
 }
 .box-left-line {
     width: 460px;
