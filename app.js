@@ -7,35 +7,36 @@ document.addEventListener("DOMContentLoaded", async () => {
         refreshContent(countrySelector.value);
     });
 
-    function refreshContent(country_iso2) {
-        const nf = new Intl.NumberFormat();
+    const refreshContent = async (country_iso2) => {
+        // fetch data
+        const res = await fetch(
+            "https://disease.sh/v3/covid-19/countries/" + country_iso2
+        );
+        const data = await res.json();
 
+        const nf = new Intl.NumberFormat();
         document.getElementById("cases-new").innerText =
-            "+" + nf.format(countries_data[country_iso2].todayCases);
+            "+" + nf.format(data.todayCases);
         document.getElementById("cases-total").innerText = nf.format(
-            countries_data[country_iso2].cases
+            data.cases
         );
         document.getElementById("cases-active").innerText = nf.format(
-            countries_data[country_iso2].active
+            data.active
         );
         document.getElementById("cases-critical").innerText = nf.format(
-            countries_data[country_iso2].critical
+            data.critical
         );
         document.getElementById("deaths-new").innerText =
-            "+" + nf.format(countries_data[country_iso2].todayDeaths);
+            "+" + nf.format(data.todayDeaths);
         document.getElementById("deaths-total").innerText = nf.format(
-            countries_data[country_iso2].deaths
+            data.deaths
         );
         document.getElementById("recovered-new").innerText =
-            "+" + nf.format(countries_data[country_iso2].todayRecovered);
+            "+" + nf.format(data.todayRecovered);
         document.getElementById("recovered-total").innerText = nf.format(
-            countries_data[country_iso2].recovered
+            data.recovered
         );
-    }
-
-    // fetch data
-    const res = await fetch("https://disease.sh/v3/covid-19/countries");
-    const data = await res.json();
+    };
 
     // set default country
     const option = document.createElement("option");
@@ -43,37 +44,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     option.text = default_country.name;
     countrySelector.appendChild(option);
 
-    // prepare data
-    data.forEach((country) => {
-        // populate country selector
-        if (country.countryInfo.iso2 !== default_country.iso2) {
+    // prepare country selector
+    const res = await fetch("countries.json");
+    const countries = await res.json();
+    countries.forEach((country) => {
+        if (country.iso2 !== default_country.iso2) {
             const option = document.createElement("option");
-            option.value = country.countryInfo.iso2;
-            option.text = country.country;
+            option.value = country.iso2;
+            option.text = country.name;
             countrySelector.appendChild(option);
         }
-
-        const {
-            todayCases,
-            cases,
-            active,
-            critical,
-            todayDeaths,
-            deaths,
-            todayRecovered,
-            recovered,
-        } = country;
-
-        countries_data[country.countryInfo.iso2] = {
-            todayCases,
-            cases,
-            active,
-            critical,
-            todayDeaths,
-            deaths,
-            todayRecovered,
-            recovered,
-        };
     });
 
     refreshContent(default_country.iso2);
