@@ -17,30 +17,26 @@ hr {
     margin: 5px;
 }
 
-p.label {
+p {
     font-family: "Poppins";
-    font-size: 22px;
     line-height: 1.5;
+}
+p.label {
+    font-size: 22px;
     color: #5e5e5e;
-    padding-top: 5px;
+    padding-top: 10px;
 }
 p.value-small {
-    font-family: "Poppins";
     font-size: 38px;
     font-weight: 600;
-    line-height: 1.5;
 }
 p.value-medium {
-    font-family: "Poppins";
     font-size: 45px;
     font-weight: 600;
-    line-height: 1.5;
 }
 p.value-large {
-    font-family: "Poppins";
     font-size: 80px;
     font-weight: 600;
-    line-height: 1.4;
 }
 .text-gray {
     color: #575757;
