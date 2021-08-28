@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Thailand COVID-19 Situation</title>
         <link rel="stylesheet" href="style.css" />
+        <script src="app.js"></script>
     </head>
     <body>
         <header>
@@ -17,21 +18,33 @@
                     <div class="large-box">
                         <div class="info">
                             <p class="label">NEW CASES</p>
-                            <p class="value-large text-orange">+18,702</p>
+                            <p class="value-large text-orange" id="cases-new">
+                                ...
+                            </p>
                             <hr class="box-left-line" />
                             <p class="label">TOTAL CASES</p>
-                            <p class="value-large text-orange">1,139,571</p>
+                            <p class="value-large text-orange" id="cases-total">
+                                ...
+                            </p>
                             <hr class="box-left-line" />
                             <div class="box-row">
                                 <div class="box-row-left">
                                     <p class="label">ACTIVE</p>
-                                    <p class="value-medium text-blue">
-                                        185,200
+                                    <p
+                                        class="value-medium text-blue"
+                                        id="cases-active"
+                                    >
+                                        ...
                                     </p>
                                 </div>
                                 <div class="box-row-right">
                                     <p class="label">CRITICAL</p>
-                                    <p class="value-medium text-red">5,174</p>
+                                    <p
+                                        class="value-medium text-red"
+                                        id="cases-critical"
+                                    >
+                                        ...
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -41,19 +54,33 @@
                     <div class="small-box">
                         <div class="info">
                             <p class="label">NEW DEATHS</p>
-                            <p class="value-small text-gray">+273</p>
+                            <p class="value-small text-gray" id="deaths-new">
+                                ...
+                            </p>
                             <hr class="box-right-line" />
                             <p class="label">TOTAL DEATHS</p>
-                            <p class="value-small text-gray">10,587</p>
+                            <p class="value-small text-gray" id="deaths-total">
+                                ...
+                            </p>
                         </div>
                     </div>
                     <div class="small-box">
                         <div class="info">
                             <p class="label">NEW RECOVERED</p>
-                            <p class="value-small text-green">+20,163</p>
+                            <p
+                                class="value-small text-green"
+                                id="recovered-new"
+                            >
+                                ...
+                            </p>
                             <hr class="box-right-line" />
                             <p class="label">TOTAL RECOVERED</p>
-                            <p class="value-small text-green">943,784</p>
+                            <p
+                                class="value-small text-green"
+                                id="recovered-total"
+                            >
+                                ...
+                            </p>
                         </div>
                     </div>
                 </div>
