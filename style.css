@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #3d3d3d;
+}
+p,
+h1 {
+    margin: 0;
+    padding: 0;
+}
+hr {
+    margin: 5px;
+}
+
+p.label {
+    font-family: "Poppins";
+    font-size: 22px;
+    line-height: 1.5;
+    color: #5e5e5e;
+    padding-top: 5px;
+}
+p.value-small {
+    font-family: "Poppins";
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+p.value-medium {
+    font-family: "Poppins";
+    font-size: 45px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+p.value-large {
+    font-family: "Poppins";
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+.text-gray {
+    color: #575757;
+}
+.text-green {
+    color: #47bc2c;
+}
+.text-orange {
+    color: #e99f30;
+}
+.text-blue {
+    color: #3e78a7;
+}
+.text-red {
+    color: #ff4d4d;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin: 35px 0 15px 0;
+}
+header h1 {
+    color: white;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 50px;
+}
+
+.boxes {
+    display: flex;
+    justify-content: center;
+}
+.box-right,
+.box-left {
+    display: flex;
+    flex-direction: column;
+}
+.large-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+}
+.small-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 230px;
+    height: 230px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+}
+.box-row {
+    display: flex;
+}
+.box-row-left {
+    width: 50%;
+    padding-top: 10px;
+    border-right: 1px solid #a8a8a8;
+}
+.box-row-right {
+    width: 50%;
+    padding-top: 10px;
+}
+.box-left-line {
+    width: 460px;
+    border: 0;
+    border-top: 1px solid #a8a8a8;
+}
+.box-right-line {
+    width: 190px;
+    border: 0;
+    border-top: 1px solid #a8a8a8;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 30px 0;
+}
+footer p {
+    color: white;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 24px;
+}
+footer a {
+    color: inherit;
+}
